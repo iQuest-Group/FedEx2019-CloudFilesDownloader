@@ -10,3 +10,5 @@ CloudFileDownloader/CloudFileDownloader/obj/Debug/CloudFileDownloader.csprojAsse
 CloudFileDownloader/CloudFileDownloader/obj/Debug/CloudFileDownloader.csproj.FileListAbsolute.txt
 CloudFileDownloader/CloudFileDownloader/bin/Debug/CloudFileDownloader.exe
 CloudFileDownloader/.vs/CloudFileDownloader/v16/.suo
+CloudFileDownloader/packages/
+CloudFileDownloader/CloudFileDownloader/obj/Debug/
