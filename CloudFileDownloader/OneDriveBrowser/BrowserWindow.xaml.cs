@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OneDriveBrowser
@@ -25,8 +26,11 @@ namespace OneDriveBrowser
         public BrowserWindow()
         {
             InitializeComponent();
+
             webBrowser.Navigate(signInUrl);
         }
+
+
 
         private void webBrowser_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {

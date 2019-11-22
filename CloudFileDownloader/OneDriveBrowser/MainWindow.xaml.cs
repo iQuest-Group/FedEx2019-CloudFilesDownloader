@@ -28,6 +28,9 @@ namespace OneDriveBrowser
         static string accessTokenUrl = String.Format(@"https://login.live.com/oauth20_token.srf?client_id={0}&client_secret={1}&redirect_uri=https://login.live.com/oauth20_desktop.srf&grant_type=authorization_code&code=", client_id, client_secret);
         static string apiUrl = @"https://apis.live.net/v5.0/";
         public Dictionary<string, string> tokenData = new Dictionary<string, string>();
+
+        public string AccessToken { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -91,6 +94,7 @@ namespace OneDriveBrowser
             string imgUrl = apiUrl + "me/picture?access_token=" + App.Current.Properties["access_token"];
             imgUser.Source = new BitmapImage(new Uri(imgUrl, UriKind.RelativeOrAbsolute));
             txtToken.Text += "access_token = " + App.Current.Properties["access_token"] + "\r\n\r\n";
+            this.AccessToken = App.Current.Properties["access_token"].ToString();
         }
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
@@ -115,7 +119,7 @@ namespace OneDriveBrowser
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            
         }
     }
 }
