@@ -83,9 +83,22 @@ namespace CloudFileDownloader.Core
             return allItems;
         }
 
-        public void Put(string localPath, string destination)
+        public void Put(string localPath)
         {
-            throw new NotImplementedException();
+
+            var fileMetadata = new Google.Apis.Drive.v3.Data.File()
+            {
+                Name = Path.GetFileName(localPath)
+            };
+
+            FilesResource.CreateMediaUpload request;
+            using (var stream = new System.IO.FileStream(localPath, System.IO.FileMode.Open))
+            {
+                request = service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                request.Fields = "id";
+                var result=request.Upload();
+                var x = 1;
+            }
         }
     }
 }

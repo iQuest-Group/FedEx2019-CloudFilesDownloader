@@ -36,8 +36,20 @@ namespace CloudFileDownloader
 
             IDriveExplorer explorer = new GoogleDriveExplorer();
             explorer.Autheticate();
-            var files =explorer.Drive.GetAll();
-            explorer.Drive.Get(files.Last().Id, files.Last().Name);
+
+            var files = explorer.Drive.GetAll();
+            foreach (var file in files)
+            {
+                Console.WriteLine($"Name = {file.Name}, Id={file.Id}");
+            }
+
+
+            explorer.Drive.Put(@"C:\Users\Florin\Downloads\logoASCOR.JPG");
+            var files2 = explorer.Drive.GetAll();
+            foreach(var file in files2)
+            {
+                Console.WriteLine($"Name = {file.Name}, Id={file.Id}");
+            }
 
 
 

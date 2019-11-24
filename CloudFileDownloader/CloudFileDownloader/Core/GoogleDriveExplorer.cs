@@ -15,7 +15,7 @@ namespace CloudFileDownloader.Core
     {
         private UserCredential credential;
         private string credentialsFileName;
-        private static string[] Scopes = { DriveService.Scope.DriveReadonly };
+        private static string[] Scopes = { DriveService.Scope.Drive };
         private IDrive _drive;
         private const string credPath = "token1.json";
 

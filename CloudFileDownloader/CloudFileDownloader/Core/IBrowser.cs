@@ -6,6 +6,6 @@ namespace CloudFileDownloader.Core
     {
         List<FileInformation> GetAll();
         void Get(string itemId, string destPath);
-        void Put(string localPath, string destination);
+        void Put(string localPath);
     }
 }
